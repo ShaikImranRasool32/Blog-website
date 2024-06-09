@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <header style="background-color: #00897b; color: #fff; padding: 20px 0;">
+        <div class="container" style="max-width: 1200px; margin: auto; overflow: hidden; padding: 0 20px;">
+            <div id="branding" style="float: left;">
+                <h1>Blog Website</h1>
+            </div>
+            <nav style="float: right;">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li style="display: inline; margin-left: 20px;"><a href="/" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="/about" style="color: #fff; text-decoration: none;">About</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="/contact" style="color: #fff; text-decoration: none;">Contact</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="/compose" style="color: #fff; text-decoration: none;">Compose</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container animate__animated animate__fadeIn">
+        <h1 class="animate__animated animate__bounceInDown">Home</h1>
+        <p class="animate__animated animate__fadeIn">Welcome to our Blog! Here, you'll find a collection of insightful articles, stories, and musings written by our team and contributors. Whether you're looking for tips, inspiration, or just a good read, you're in the right place. Feel free to explore our latest posts below and join the conversation by sharing your thoughts in the comments section. Happy reading!</p>
+    
+        <% posts.forEach(function(post) { %>
+            <div class="post animate__animated animate__fadeInUp">
+                <h2><%= post.title %></h2>
+                <% if (post.content) { %>
+                    <p><%= post.content.substring(0, 100) + " ..." %></p>
+                <% } %>
+                <a href="/posts/<%= post._id %>">Read More</a>
+            </div>
+        <% }) %>
+    </div>
+    
+    <footer>
+        <p>Blog Website &copy; 2023</p>
+    </footer>
+</body>
+</html>

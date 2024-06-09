@@ -1,0 +1,18 @@
+{
+    "name": "blog-website",
+    "version": "1.0.0",
+    "description": "A blog website for reading and writing posts using HTML, CSS, Node.js, and MongoDB.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "dotenv": "^16.4.5",
+        "ejs": "^3.1.10",
+        "express": "^4.19.2",
+        "mongoose": "^6.12.9"
+    }
+}
